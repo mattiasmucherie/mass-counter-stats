@@ -26,7 +26,7 @@ function App() {
         .onSnapshot(doc => {
           const beerAccumulated = [];
           let beerCount =
-            parseInt(doc.data().numBeer.toFixed(2)) +
+            parseFloat(doc.data().numBeer.toFixed(1)) +
             doc.data().time.reverse()[0].amount;
 
           doc
@@ -57,7 +57,7 @@ function App() {
   }, []);
 
   const chartOptions = {
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     title: {
       text: "Trainee 2018 Beer Consumption",
       display: true
