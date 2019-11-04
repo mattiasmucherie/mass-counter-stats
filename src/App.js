@@ -58,6 +58,10 @@ function App() {
 
   const chartOptions = {
     maintainAspectRatio: true,
+    title: {
+      text: "Trainee 2018 Beer Consumption",
+      display: true
+    },
     hover: {
       mode: "nearest"
     },
@@ -255,11 +259,7 @@ function App() {
         {loading ? (
           <h1>Loading...</h1>
         ) : (
-          <div>
-            <h1>Trainee 2018 Beer Consumption</h1>
-
-            <Line data={chartData} options={chartOptions} />
-          </div>
+          <Line data={chartData} options={chartOptions} />
         )}
       </header>
     </div>
