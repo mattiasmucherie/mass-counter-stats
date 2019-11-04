@@ -75,7 +75,15 @@ function App() {
         {
           type: "time",
           time: {
-            unit: "day"
+            unit: "week"
+          }
+        }
+      ],
+      yAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: "Litres Beer"
           }
         }
       ]
