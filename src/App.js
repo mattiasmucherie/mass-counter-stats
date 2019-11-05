@@ -208,7 +208,7 @@ function App() {
         pointHoverBackgroundColor: "rgba(123,30,122,1)",
         pointHoverBorderColor: "rgba(220,220,220,1)",
         pointHoverBorderWidth: 2,
-        pointRadius: 2,
+        pointRadius: 1,
         pointHitRadius: 10,
         data: beerLog.Klara
       },
@@ -229,7 +229,7 @@ function App() {
         pointHoverBackgroundColor: "rgba(180,197,228,1)",
         pointHoverBorderColor: "rgba(220,220,220,1)",
         pointHoverBorderWidth: 2,
-        pointRadius: 2,
+        pointRadius: 1,
         pointHitRadius: 10,
         data: beerLog.Filip
       },
