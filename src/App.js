@@ -16,6 +16,7 @@ function App() {
       "Axelina",
       "Klara",
       "Filip",
+      "Guest",
       "Malin"
     ];
     const beerLogLocal = {};
@@ -25,24 +26,18 @@ function App() {
         .doc(names[i])
         .onSnapshot(doc => {
           const beerAccumulated = [];
-          let beerCount =
-            parseFloat(doc.data().numBeer.toFixed(1)) +
-            doc.data().time.reverse()[0].amount;
+          let beerCount = parseFloat(doc.data().numBeer.toFixed(1));
 
           doc
             .data()
             .time.reverse()
             .forEach(obj => {
-              beerCount -= obj.amount;
               beerAccumulated.push({
                 x: new Date(obj.time),
                 y: beerCount
               });
+              beerCount -= obj.amount;
             });
-          beerAccumulated.unshift({
-            x: new Date(),
-            y: parseInt(doc.data().numBeer.toFixed(0))
-          });
           beerLogLocal[names[i]] = beerAccumulated.reverse();
           if (names[i] === "Malin") {
             addBeerLog(beerLogLocal);
@@ -213,7 +208,7 @@ function App() {
         pointHoverBackgroundColor: "rgba(123,30,122,1)",
         pointHoverBorderColor: "rgba(220,220,220,1)",
         pointHoverBorderWidth: 2,
-        pointRadius: 1,
+        pointRadius: 2,
         pointHitRadius: 10,
         data: beerLog.Klara
       },
@@ -234,7 +229,7 @@ function App() {
         pointHoverBackgroundColor: "rgba(180,197,228,1)",
         pointHoverBorderColor: "rgba(220,220,220,1)",
         pointHoverBorderWidth: 2,
-        pointRadius: 1,
+        pointRadius: 2,
         pointHitRadius: 10,
         data: beerLog.Filip
       },
@@ -265,7 +260,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         {loading ? (
-          <h1>Loading...</h1>
+          <div class="lds-heart">
+            <div></div>
+          </div>
         ) : (
           <Line data={chartData} options={chartOptions} />
         )}
