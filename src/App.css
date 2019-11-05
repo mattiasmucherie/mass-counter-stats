@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(45, 41, 38);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
   position: absolute;
   width: 26px;
   height: 26px;
-  background: #fff;
+  background: rgb(214, 0, 28);
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .lds-heart div:after,
@@ -36,7 +36,7 @@
   display: block;
   width: 26px;
   height: 26px;
-  background: #fff;
+  background: rgb(214, 0, 28);
 }
 .lds-heart div:before {
   left: -17px;
