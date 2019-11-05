@@ -55,7 +55,9 @@ function App() {
     maintainAspectRatio: false,
     title: {
       text: "Trainee 2018 Beer Consumption",
-      display: true
+      display: true,
+      fontSize: 18,
+      fontColor: "#fafafa"
     },
     hover: {
       mode: "nearest"
@@ -71,11 +73,19 @@ function App() {
           type: "time",
           time: {
             unit: "week"
+          },
+          gridLines: {
+            display: true,
+            color: "#383330"
           }
         }
       ],
       yAxes: [
         {
+          gridLines: {
+            display: true,
+            color: "#383330"
+          },
           scaleLabel: {
             display: true,
             labelString: "Litres Beer"
